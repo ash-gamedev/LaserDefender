@@ -6,12 +6,21 @@ namespace Assets.Scripts
 {
     public class PathFinder : MonoBehaviour
     {
-        [SerializeField] WaveConfigSO waveConfig;
+        // private variables
+        EnemySpawner enemySpawner;
+        WaveConfigSO waveConfig;
         List<Transform> waypoints;
         int waypointIndex = 0;
 
+        #region Awake, Start, Update
+        private void Awake()
+        {
+            enemySpawner = FindObjectOfType<EnemySpawner>();
+        }
         void Start()
         {
+            waveConfig = enemySpawner.GetWaveConfigSO();
+
             waypoints = waveConfig.GetWaypoints();
 
             // get first waypoint and set position
@@ -22,7 +31,9 @@ namespace Assets.Scripts
         {
             FollowPath();
         }
+        #endregion
 
+        #region private funtions
         /// <summary>
         /// Follow path moves (transform) closer to the next waypoint in the list
         /// </summary>
@@ -51,5 +62,6 @@ namespace Assets.Scripts
                 Destroy(gameObject);
             }
         }
+        #endregion
     }
 }

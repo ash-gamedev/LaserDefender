@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     private Vector2 minBounds;
     private Vector2 maxBounds;
 
+    #region Start, Update
     void Start()
     {
         InitBounds();
@@ -29,8 +30,9 @@ public class Player : MonoBehaviour
     {
         Move();
     }
+    #endregion
 
-    #region Movement
+    #region private functions
     void InitBounds()
     {
         // Get the boundaries of the screen through the camera
