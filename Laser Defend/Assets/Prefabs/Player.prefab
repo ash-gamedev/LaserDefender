@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: -796415673977150437}
   - component: {fileID: 7127168288193929826}
   - component: {fileID: -7518361216371795646}
+  - component: {fileID: 1501357260}
+  - component: {fileID: 1501357261}
+  - component: {fileID: 1324943067289431056}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -73,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1501871427
-  m_SortingLayer: 0
+  m_SortingLayerID: 1544282459
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: af6d8cf0e121eef4e913d0ea79839862, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -156,3 +159,70 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+--- !u!114 &1501357260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5126884124401925324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e70271d88403d4db148dc76c8a01de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 7
+  paddingLeft: 0.7
+  paddingRight: 0.7
+  paddingTop: 6
+  paddingBottom: 2
+--- !u!114 &1501357261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5126884124401925324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 7f17fd435c18e46418ef6322ad391d5d, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1324943067289431056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5126884124401925324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d820678dc3d347545bedc5d808dc958e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 2457515593116612340, guid: 65a3d713fd664da4186dc34dd12a016c, type: 3}
+  baseFiringRate: 0.3
+  projectileSpeed: 15
+  projectileLifetime: 5
+  useAI: 0
+  minimumFiringRate: 0.1
+  firingRateVariance: 0.2
+  isFiring: 0

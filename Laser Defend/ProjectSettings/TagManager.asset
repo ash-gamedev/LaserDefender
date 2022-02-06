@@ -44,6 +44,9 @@ TagManager:
   - name: Background
     uniqueID: 1117491339
     locked: 0
+  - name: Lasers
+    uniqueID: 3070506015
+    locked: 0
   - name: Enemy
     uniqueID: 683870253
     locked: 0

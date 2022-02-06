@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -7400640204066208001}
   - component: {fileID: 7123899212529199399}
   - component: {fileID: 4451339035470460230}
+  - component: {fileID: 6464191441740213856}
   m_Layer: 7
   m_Name: Enemy0
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1544282459
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a9a6c9534e10c504199f9707bbc59c8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -164,3 +165,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 25
+--- !u!114 &6464191441740213856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2290312103355024247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d820678dc3d347545bedc5d808dc958e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 2457515593116612340, guid: f864230e0fad9dc49934715b277dfea7, type: 3}
+  baseFiringRate: 0.8
+  projectileSpeed: 8
+  projectileLifetime: 5
+  useAI: 1
+  minimumFiringRate: 0.5
+  firingRateVariance: 1
+  isFiring: 0
