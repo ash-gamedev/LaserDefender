@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6464191441740213856}
   m_Layer: 7
   m_Name: Enemy0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,8 +151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573ece59edd0efc45a84cef53f7382f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 25
   hitEffect: {fileID: 8010756590670796841, guid: 9e7bcdb7d1f9be842bd817a7c5a19241, type: 3}
+  applyCameraShake: 0
 --- !u!114 &4451339035470460230
 MonoBehaviour:
   m_ObjectHideFlags: 0

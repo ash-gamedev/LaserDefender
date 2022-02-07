@@ -23,10 +23,12 @@ namespace Assets.Scripts
 
         // private fields
         private Coroutine firingCoroutine;
+        private SoundEffects soundEffects;
 
         #region Start, Update
         void Start()
         {
+            soundEffects = FindObjectOfType<SoundEffects>();
             if (useAI)
                 isFiring = true;
         }
@@ -72,6 +74,10 @@ namespace Assets.Scripts
                 Rigidbody2D instanceRb = instance.GetComponent<Rigidbody2D>();
                 if (instanceRb != null)
                     instanceRb.velocity = (useAI ? -transform.up : transform.up) * projectileSpeed;
+
+                // play sound
+                Enum.Sounds firingSound = useAI ? Enum.Sounds.EnemyShot : Enum.Sounds.PlayerShot;
+                soundEffects.PlaySoundEffect(firingSound, 0.75f);
 
                 Destroy(instance, projectileLifetime);
 

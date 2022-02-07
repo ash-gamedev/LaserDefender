@@ -11,7 +11,9 @@ namespace Assets.Scripts
         public enum Sounds
         {
             Damage = 0,
-            Destroyed = 1
+            Destroyed = 1,
+            PlayerShot = 2,
+            EnemyShot = 3
         }
     }
 }

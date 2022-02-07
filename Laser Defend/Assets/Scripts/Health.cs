@@ -6,16 +6,19 @@ namespace Assets.Scripts
     public class Health : MonoBehaviour
     {
         [SerializeField] int health = 50;
+        [SerializeField] int scorePoints = 50;
         [SerializeField] ParticleSystem hitEffect;
         [SerializeField] bool applyCameraShake;
 
         // private variables
         CameraShake cameraShake;
         SoundEffects soundEffects;
+        ScoreKeeper scoreKeeper;
 
         #region Awake
         private void Awake()
         {
+            this.scoreKeeper = FindObjectOfType<ScoreKeeper>();
             this.soundEffects = FindObjectOfType<SoundEffects>();
             this.cameraShake = Camera.main.GetComponent<CameraShake>();
         }
@@ -66,11 +69,27 @@ namespace Assets.Scripts
 
             if (health <= 0)
             {
-                Destroy(gameObject);
-
-                // Destroyed Sound Effect
-                soundEffects.PlaySoundEffect(Enum.Sounds.Destroyed, 0.5f);
+                Die();
             }
+        }
+
+        void Die()
+        {
+            // Destroyed Sound Effect
+            soundEffects.PlaySoundEffect(Enum.Sounds.Destroyed, 0.5f);
+
+            if (gameObject.CompareTag("Enemy"))
+            {
+                // if enemy was destroyed add points to score
+                scoreKeeper.AddToScore(scorePoints);
+            }
+            else
+            {
+                // if the player was destroyed, reset score
+                scoreKeeper.ResetScore();
+            }
+
+            Destroy(gameObject);
         }
 
         void PlayHitEffect()
