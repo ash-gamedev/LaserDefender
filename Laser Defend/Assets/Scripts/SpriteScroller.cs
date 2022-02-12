@@ -6,12 +6,20 @@ namespace Assets.Scripts
 {
     public class SpriteScroller : MonoBehaviour
     {
-        [SerializeField] private RawImage _img;
-        [SerializeField] private float _x, _y;
+        [SerializeField] Vector2 moveSpeed;
+
+        Vector2 offset;
+        Material material;
+
+        private void Awake()
+        {
+            material = GetComponent<SpriteRenderer>().material;
+        }
 
         void Update()
         {
-            _img.uvRect = new Rect(_img.uvRect.position + new Vector2(_x, _y) * Time.deltaTime, _img.uvRect.size);
+            offset = moveSpeed * Time.deltaTime;
+            material.mainTextureOffset += offset;
         }
     }
 }

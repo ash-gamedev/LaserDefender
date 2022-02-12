@@ -7,6 +7,16 @@ namespace Assets.Scripts
     {
         int score = 0;
 
+        static ScoreKeeper instance;
+
+        #region Awake
+
+        private void Awake()
+        {
+            ManageSingleton();
+        }
+        #endregion
+
         #region public functions
 
         public int GetScore()
@@ -23,6 +33,26 @@ namespace Assets.Scripts
         public void ResetScore()
         {
             score = 0;
+        }
+
+        #endregion
+
+        #region private functions
+        void ManageSingleton()
+        {
+            if (instance != null)
+            {
+                // need to disable this so other objects don't try to access
+                gameObject.SetActive(false);
+
+                // now destroy
+                Destroy(gameObject);
+            }
+            else
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
         }
 
         #endregion

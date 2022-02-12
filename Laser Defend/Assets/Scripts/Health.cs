@@ -12,14 +12,16 @@ namespace Assets.Scripts
 
         // private variables
         CameraShake cameraShake;
-        SoundEffects soundEffects;
+        AudioPlayer soundEffects;
         ScoreKeeper scoreKeeper;
+        LevelManager levelManager;
 
         #region Awake
         private void Awake()
         {
             this.scoreKeeper = FindObjectOfType<ScoreKeeper>();
-            this.soundEffects = FindObjectOfType<SoundEffects>();
+            this.soundEffects = FindObjectOfType<AudioPlayer>();
+            this.levelManager = FindObjectOfType<LevelManager>();
             this.cameraShake = Camera.main.GetComponent<CameraShake>();
         }
         #endregion
@@ -76,7 +78,7 @@ namespace Assets.Scripts
         void Die()
         {
             // Destroyed Sound Effect
-            soundEffects.PlaySoundEffect(Enum.Sounds.Destroyed, 0.5f);
+            soundEffects.PlaySoundEffect(Enum.Sounds.Destroyed, 1f);
 
             if (gameObject.CompareTag("Enemy"))
             {
@@ -85,8 +87,8 @@ namespace Assets.Scripts
             }
             else
             {
-                // if the player was destroyed, reset score
-                scoreKeeper.ResetScore();
+                // if the player was destroyed, switch to game over scene
+                levelManager.LoadGameOver();
             }
 
             Destroy(gameObject);
@@ -97,7 +99,7 @@ namespace Assets.Scripts
             if (hitEffect != null)
             {
                 // Damage Sound Effect
-                soundEffects.PlaySoundEffect(Enum.Sounds.Damage);
+                soundEffects.PlaySoundEffect(Enum.Sounds.Damage, 0.75f);
 
                 // Particles
                 ParticleSystem instance = Instantiate(hitEffect, transform.position, Quaternion.identity);

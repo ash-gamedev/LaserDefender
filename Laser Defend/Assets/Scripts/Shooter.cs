@@ -23,12 +23,12 @@ namespace Assets.Scripts
 
         // private fields
         private Coroutine firingCoroutine;
-        private SoundEffects soundEffects;
+        private AudioPlayer soundEffects;
 
         #region Start, Update
         void Start()
         {
-            soundEffects = FindObjectOfType<SoundEffects>();
+            soundEffects = FindObjectOfType<AudioPlayer>();
             if (useAI)
                 isFiring = true;
         }
