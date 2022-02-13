@@ -31,6 +31,15 @@ namespace Assets.Scripts
         {
             return health;
         }
+
+        public void Kill()
+        {
+            //Play hit effect
+            PlayHitEffect();
+
+            //Kill
+            Die();
+        }
         #endregion
 
         #region private functions

@@ -9,6 +9,7 @@ namespace Assets.Scripts
         // Serializable fields
         [Header("General")]
         [SerializeField] GameObject projectilePrefab;
+        [SerializeField] GameObject missleProjectilePrefab;
         [SerializeField] float baseFiringRate = 0.5f;
         [SerializeField] float projectileSpeed = 10f;
         [SerializeField] float projectileLifetime = 5f;

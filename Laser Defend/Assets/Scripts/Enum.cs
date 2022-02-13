@@ -13,7 +13,8 @@ namespace Assets.Scripts
             Damage = 0,
             Destroyed = 1,
             PlayerShot = 2,
-            EnemyShot = 3
+            EnemyShot = 3,
+            ShieldProjejctile = 4
         }
     }
 }
