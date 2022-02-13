@@ -13,6 +13,7 @@ namespace Assets.Scripts
 
         // private variables
         WaveConfigSO currentWave;
+        float waveTimeVariance = 1f;
         
         #region Start
         void Start()
@@ -48,11 +49,13 @@ namespace Assets.Scripts
                         Quaternion.identity, // need to specify rotation
                         transform); // this will place the enemies under the Enemy Spawner object as a child
 
-                        yield return new WaitForSeconds(currentWave.GetRandomSpawnTime());
+                        yield return new WaitForSeconds(currentWave.GetRandomSpawnTime()*waveTimeVariance);
                     }
 
-                    yield return new WaitForSeconds(timeBetweenWaves);
+                    yield return new WaitForSeconds(timeBetweenWaves*waveTimeVariance);
                 }
+                // decrease the time each loop through of waves to increase difficulty
+                waveTimeVariance *= 0.8f;
             } while (isLooping);
         }
         #endregion

@@ -207,120 +207,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: destroyed
-      value: 
-      objectReference: {fileID: 8300000, guid: 58e5c4a37722afe4285d2393cc299dff, type: 3}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: shieldHit
-      value: 
-      objectReference: {fileID: 8300000, guid: b25f61265d7d47c488cf31928bd06376, type: 3}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: damageTaken
-      value: 
-      objectReference: {fileID: 8300000, guid: c3901a714792077458f6d94bf59ebd84, type: 3}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: powerUpAppear
-      value: 
-      objectReference: {fileID: 8300000, guid: 368b6e879db7d8a43a930e2eca90f023, type: 3}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: powerUpGained
-      value: 
-      objectReference: {fileID: 8300000, guid: 82b1627a8e86b21468acfc9e53d8f458, type: 3}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: destroyedVolume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: enemyProjectile
-      value: 
-      objectReference: {fileID: 8300000, guid: caa8c2632b378ff41b662ff1739b3c98, type: 3}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: shieldHitVolume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: playerProjectile
-      value: 
-      objectReference: {fileID: 8300000, guid: 32aff245022a8e84c82db65f2f1eecce, type: 3}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: powerUpDisappear
-      value: 
-      objectReference: {fileID: 8300000, guid: 218d07e0243aabe47b81af939c9830e3, type: 3}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: damageTakenVolume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
       propertyPath: powerUpAppearVolume
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: powerUpGainedVolume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: enemyProjectileVolume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: powerUpDisppearVolume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: playerProjectileVolume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: soundEffects.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: soundEffects.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: 6a7a0bb6ad70a7f4fa5413f701027dc9, type: 3}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: soundEffects.Array.data[6]
-      value: 
-      objectReference: {fileID: 8300000, guid: 82b1627a8e86b21468acfc9e53d8f458, type: 3}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: soundEffects.Array.data[7]
-      value: 
-      objectReference: {fileID: 8300000, guid: 218d07e0243aabe47b81af939c9830e3, type: 3}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: soundEffectsVolume.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: soundEffectsVolume.Array.data[0]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: soundEffectsVolume.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: soundEffectsVolume.Array.data[2]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: soundEffectsVolume.Array.data[3]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: soundEffectsVolume.Array.data[4]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: soundEffectsVolume.Array.data[5]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: soundEffectsVolume.Array.data[6]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437976440853139553, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
-      propertyPath: soundEffectsVolume.Array.data[7]
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7437976440853139554, guid: bc263cb32892ad645ba9aae2a13669c0, type: 3}
       propertyPath: m_RootOrder
@@ -985,8 +873,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveConfigs:
+  - {fileID: 11400000, guid: ea6e7abca571f4d4089acff30565ae88, type: 2}
+  - {fileID: 11400000, guid: 67895b275a31cd64d9ff001a102c94cd, type: 2}
   - {fileID: 11400000, guid: c3471721d34d7604b900f7d403650e30, type: 2}
+  - {fileID: 11400000, guid: 308717386361eeb4fbd3264ef21d0f00, type: 2}
+  - {fileID: 11400000, guid: c595ec92bb95b41479c19301e5b6df61, type: 2}
   - {fileID: 11400000, guid: fcebb4792c1cde0438259f41d8de7d67, type: 2}
+  - {fileID: 11400000, guid: 532330f8b1d163549ac5fe966e461bfe, type: 2}
+  - {fileID: 11400000, guid: 302f56a45f6c6cc4084c7f138e5ac49e, type: 2}
   timeBetweenWaves: 2
   isLooping: 1
 --- !u!4 &1623176792
@@ -1159,7 +1053,7 @@ MonoBehaviour:
   powerUps:
   - {fileID: 1977276472295553751, guid: f39f5f39bb20ea547b0aed7ebb7f50d6, type: 3}
   - {fileID: 2607388651129113316, guid: 69e98e2e6b0de42448f725d102d8cd55, type: 3}
-  timeBetweenPowerUps: 20
+  timeBetweenPowerUps: 15
 --- !u!4 &1840241120
 Transform:
   m_ObjectHideFlags: 0
