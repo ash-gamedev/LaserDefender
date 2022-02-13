@@ -11,15 +11,20 @@ namespace Assets.Scripts
         GameObject powerUpInstance;
         bool powerUpActive = false;
 
-        SpriteRenderer spriteRenderer;
+        AudioPlayer audioPlayer;
         SpriteRenderer powerUpSpriteRenderer;
-
         Animator animator;
 
         private void Awake()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
+            audioPlayer = FindObjectOfType<AudioPlayer>();
+        }
+
+        private void Start()
+        {
+            // play sound effect on appear
+            audioPlayer.PlaySoundEffect(Enum.Sounds.PowerUpAppear);
         }
 
         public bool IsPowerUpActive()
@@ -27,15 +32,19 @@ namespace Assets.Scripts
             return powerUpActive;
         }
 
+        public float GetPowerUpDuration()
+        {
+            return duration;
+        }
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Player") && powerUpActive == false)
             {
                 powerUpActive = true;
 
-                // hide sprite
-                animator.Play("ShieldPowerUpDissappear");
-                //spriteRenderer.enabled = false;
+                // hide sprite + play sound effect
+                audioPlayer.PlaySoundEffect(Enum.Sounds.PowerUpGained);
+                ChangeAnimationState("PowerUp_Dissapear");
 
                 // instantiate object
                 powerUpInstance = Instantiate(powerUp,  // what object to instantiate
@@ -75,10 +84,21 @@ namespace Assets.Scripts
                 // wait full duration
                 yield return new WaitForSeconds(duration);
             }
-            
+
+            // play sound effect on powerup debuff
+            audioPlayer.PlaySoundEffect(Enum.Sounds.PowerUpLost);
+
             powerUpActive = false;
             Destroy(gameObject);
             Destroy(powerUpInstance);
+        }
+
+        void ChangeAnimationState(string animationName)
+        {
+            Debug.Log("Playing: " + animationName);
+
+            //play the animation
+            animator.Play(animationName);
         }
 
     }

@@ -6,6 +6,7 @@ namespace Assets.Scripts
     public class ShieldPowerUp : MonoBehaviour
     {
         [SerializeField] ParticleSystem hitEffect;
+        [SerializeField] float rotationTime = 100f;
         private AudioPlayer soundEffects;
         private Player player;
 
@@ -18,11 +19,17 @@ namespace Assets.Scripts
         private void Update()
         {
             FollowPlayer();
+            Rotate();
         }
 
         private void FollowPlayer()
         {
             this.transform.position = player.transform.position;
+        }
+
+        private void Rotate()
+        {
+            transform.Rotate(new Vector3(0f, 0f, rotationTime) * Time.deltaTime);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -39,7 +46,7 @@ namespace Assets.Scripts
                     Destroy(collision.gameObject);
 
                     // Sound
-                    soundEffects.PlaySoundEffect(Enum.Sounds.ShieldProjejctile, 0.5f);
+                    soundEffects.PlaySoundEffect(Enum.Sounds.ShieldHit);
 
                     // Particles
                     ParticleSystem instance = Instantiate(hitEffect, collision.transform.position, Quaternion.identity);

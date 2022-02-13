@@ -115,3 +115,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 1213738234728952562, guid: 763ee1c13165f9143815a325fa182c13, type: 3}
+  rotationTime: 50

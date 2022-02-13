@@ -87,7 +87,7 @@ namespace Assets.Scripts
         void Die()
         {
             // Destroyed Sound Effect
-            soundEffects.PlaySoundEffect(Enum.Sounds.Destroyed, 1f);
+            soundEffects.PlaySoundEffect(Enum.Sounds.Destroyed);
 
             if (gameObject.CompareTag("Enemy"))
             {
@@ -108,7 +108,7 @@ namespace Assets.Scripts
             if (hitEffect != null)
             {
                 // Damage Sound Effect
-                soundEffects.PlaySoundEffect(Enum.Sounds.Damage, 0.75f);
+                soundEffects.PlaySoundEffect(Enum.Sounds.Damage);
 
                 // Particles
                 ParticleSystem instance = Instantiate(hitEffect, transform.position, Quaternion.identity);

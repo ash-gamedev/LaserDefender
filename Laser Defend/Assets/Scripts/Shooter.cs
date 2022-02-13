@@ -9,7 +9,6 @@ namespace Assets.Scripts
         // Serializable fields
         [Header("General")]
         [SerializeField] GameObject projectilePrefab;
-        [SerializeField] GameObject missleProjectilePrefab;
         [SerializeField] float baseFiringRate = 0.5f;
         [SerializeField] float projectileSpeed = 10f;
         [SerializeField] float projectileLifetime = 5f;
@@ -38,6 +37,19 @@ namespace Assets.Scripts
         {
             Fire();
         }
+        #endregion
+
+        #region public functions
+        public GameObject GetProjectile()
+        {
+            return projectilePrefab;
+        }
+
+        public void SetProjectile(GameObject newProjectile)
+        {
+            projectilePrefab = newProjectile;
+        }
+
         #endregion
 
         #region private functions
@@ -78,7 +90,7 @@ namespace Assets.Scripts
 
                 // play sound
                 Enum.Sounds firingSound = useAI ? Enum.Sounds.EnemyShot : Enum.Sounds.PlayerShot;
-                soundEffects.PlaySoundEffect(firingSound, 0.75f);
+                soundEffects.PlaySoundEffect(firingSound);
 
                 Destroy(instance, projectileLifetime);
 
