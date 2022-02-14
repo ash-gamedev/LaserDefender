@@ -1239,6 +1239,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 443511813, guid: 8291fb40ca3aca74abd3ebcf51a93d1e, type: 3}
+      propertyPath: moveSpeed.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1179669194, guid: 8291fb40ca3aca74abd3ebcf51a93d1e, type: 3}
+      propertyPath: moveSpeed.y
+      value: 0.18
+      objectReference: {fileID: 0}
     - target: {fileID: 6336490437895440472, guid: 8291fb40ca3aca74abd3ebcf51a93d1e, type: 3}
       propertyPath: m_Name
       value: Background

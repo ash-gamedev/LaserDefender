@@ -49,7 +49,7 @@ namespace Assets.Scripts
                         Quaternion.identity, // need to specify rotation
                         transform); // this will place the enemies under the Enemy Spawner object as a child
 
-                        yield return new WaitForSeconds(currentWave.GetRandomSpawnTime()*waveTimeVariance);
+                        yield return new WaitForSeconds(currentWave.GetRandomSpawnTime());
                     }
 
                     yield return new WaitForSeconds(timeBetweenWaves*waveTimeVariance);

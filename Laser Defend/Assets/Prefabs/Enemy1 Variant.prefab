@@ -61,7 +61,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6464191441740213856, guid: 3a437237de4d6d64d8ae225bccc4909c, type: 3}
       propertyPath: baseFiringRate
-      value: 0.1
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6464191441740213856, guid: 3a437237de4d6d64d8ae225bccc4909c, type: 3}
+      propertyPath: firingRateVariance
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7123899212529199399, guid: 3a437237de4d6d64d8ae225bccc4909c, type: 3}
       propertyPath: health
