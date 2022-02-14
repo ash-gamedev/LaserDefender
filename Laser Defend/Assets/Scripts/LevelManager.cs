@@ -19,6 +19,10 @@ namespace Assets.Scripts
         {
             StartCoroutine(WaitAndLoad("GameOver", sceneLoadDelay));
         }
+        public void LoadCredits()
+        {
+            SceneManager.LoadScene("Credits");
+        }
         public void QuitGame()
         {
             Debug.Log("Quitting");

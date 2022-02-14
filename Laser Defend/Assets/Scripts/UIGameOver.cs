@@ -16,6 +16,7 @@ namespace Assets.Scripts
         void Start()
         {
             scoreText.text = "Score: " + scoreKeeper.GetScore().ToString("D8");
+            scoreKeeper.ResetScore();
         }
     }
 }
