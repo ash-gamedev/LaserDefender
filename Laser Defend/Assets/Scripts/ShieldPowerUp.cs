@@ -24,7 +24,8 @@ namespace Assets.Scripts
 
         private void FollowPlayer()
         {
-            this.transform.position = player.transform.position;
+            if(player != null)
+                this.transform.position = player.transform.position;
         }
 
         private void Rotate()

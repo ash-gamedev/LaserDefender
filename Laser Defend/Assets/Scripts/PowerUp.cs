@@ -5,15 +5,14 @@ namespace Assets.Scripts
 {
     public class PowerUp : MonoBehaviour
     {
-        [SerializeField] float duration = 10f; // 10 seconds
         [SerializeField] GameObject powerUp;
 
-        GameObject powerUpInstance;
         bool powerUpActive = false;
 
         AudioPlayer audioPlayer;
-        SpriteRenderer powerUpSpriteRenderer;
         Animator animator;
+
+        PowerUpManager powerUpManager;
 
         private void Awake()
         {
@@ -23,6 +22,8 @@ namespace Assets.Scripts
 
         private void Start()
         {
+            powerUpManager = FindObjectOfType<PowerUpManager>();
+
             // play sound effect on appear
             audioPlayer.PlaySoundEffect(Enum.Sounds.PowerUpAppear);
         }
@@ -32,10 +33,6 @@ namespace Assets.Scripts
             return powerUpActive;
         }
 
-        public float GetPowerUpDuration()
-        {
-            return duration;
-        }
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Player") && powerUpActive == false)
@@ -46,51 +43,13 @@ namespace Assets.Scripts
                 audioPlayer.PlaySoundEffect(Enum.Sounds.PowerUpGained);
                 ChangeAnimationState("PowerUp_Dissapear");
 
-                // instantiate object
-                powerUpInstance = Instantiate(powerUp,  // what object to instantiate
-                        Camera.main.transform.position, // where to spawn the object
-                        Quaternion.identity); // need to specify rotation
+                if (powerUp.CompareTag("Shield"))
+                    powerUpManager.AddShieldPowerUp();
+                else
+                    powerUpManager.AddMisslePowerUp();
 
-                // get sprite
-                powerUpSpriteRenderer = powerUpInstance.GetComponent<SpriteRenderer>();
-
-                // wait to destroy
-                StartCoroutine(WaitAndDestroy());
+                Destroy(gameObject);
             }
-        }
-
-        IEnumerator WaitAndDestroy()
-        {
-            if (powerUp.CompareTag("Shield"))
-            {
-                // wait fraction of duration, then flash sprite
-                yield return new WaitForSeconds(duration * 0.8f);
-
-                // flash shield before power down
-                float maxTime = duration * 0.2f;
-                float currentTime = 0f;
-
-                while(currentTime < maxTime)
-                {
-                    powerUpSpriteRenderer.enabled = false;
-                    yield return new WaitForSeconds(.1f);
-                    powerUpSpriteRenderer.enabled = true;
-                    yield return new WaitForSeconds(.1f);
-                    currentTime += 0.2f;
-                }
-            }
-            else
-            {
-                // wait full duration
-                yield return new WaitForSeconds(duration);
-            }
-
-            // play sound effect on powerup debuff
-            audioPlayer.PlaySoundEffect(Enum.Sounds.PowerUpLost);
-
-            powerUpActive = false;
-            Destroy(gameObject);
-            Destroy(powerUpInstance);
         }
 
         void ChangeAnimationState(string animationName)

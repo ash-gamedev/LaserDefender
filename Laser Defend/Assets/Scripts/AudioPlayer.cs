@@ -17,6 +17,8 @@ namespace Assets.Scripts
         [Header("Player")]
         [SerializeField] AudioClip playerProjectile;
         [SerializeField] float playerProjectileVolume;
+        [SerializeField] AudioClip playerMissleProjectile;
+        [SerializeField] float playerMissleProjectileVolume;
 
         [Header("Enemy")]
         [SerializeField] AudioClip enemyProjectile;
@@ -34,6 +36,9 @@ namespace Assets.Scripts
 
         [SerializeField] AudioClip powerUpDisappear;
         [SerializeField] float powerUpDisppearVolume;
+
+        [SerializeField] AudioClip powerUpActivated;
+        [SerializeField] float powerUpActivatedVolume;
 
         // disctionary
         Dictionary<Enum.Sounds, (AudioClip, float)> soundEffects;
@@ -54,7 +59,9 @@ namespace Assets.Scripts
                 { Enum.Sounds.ShieldHit, (shieldHit, shieldHitVolume) },
                 { Enum.Sounds.PowerUpAppear, (powerUpAppear, powerUpAppearVolume) },
                 { Enum.Sounds.PowerUpGained, (powerUpGained, powerUpGainedVolume) },
-                { Enum.Sounds.PowerUpLost, (powerUpDisappear, powerUpDisppearVolume) }
+                { Enum.Sounds.PowerUpLost, (powerUpDisappear, powerUpDisppearVolume) },
+                { Enum.Sounds.PowerUpActivated, (powerUpActivated, powerUpActivatedVolume) },
+                { Enum.Sounds.MissleSound, (playerMissleProjectile, playerMissleProjectileVolume) }
             };
         }
 

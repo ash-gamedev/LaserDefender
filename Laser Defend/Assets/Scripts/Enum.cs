@@ -17,7 +17,9 @@ namespace Assets.Scripts
             ShieldHit = 4,
             PowerUpGained = 5,
             PowerUpAppear = 6,
-            PowerUpLost = 7
+            PowerUpLost = 7,
+            PowerUpActivated = 8,
+            MissleSound = 9
         }
     }
 }

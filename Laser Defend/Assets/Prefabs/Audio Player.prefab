@@ -51,16 +51,20 @@ MonoBehaviour:
   destroyedVolume: 0.5
   playerProjectile: {fileID: 8300000, guid: 32aff245022a8e84c82db65f2f1eecce, type: 3}
   playerProjectileVolume: 0.5
+  playerMissleProjectile: {fileID: 8300000, guid: 4e68ac9f2d7d26a4b854b3146cd05b8e, type: 3}
+  playerMissleProjectileVolume: 0.25
   enemyProjectile: {fileID: 8300000, guid: caa8c2632b378ff41b662ff1739b3c98, type: 3}
   enemyProjectileVolume: 0.5
   shieldHit: {fileID: 8300000, guid: b25f61265d7d47c488cf31928bd06376, type: 3}
   shieldHitVolume: 0.5
   powerUpAppear: {fileID: 8300000, guid: 368b6e879db7d8a43a930e2eca90f023, type: 3}
-  powerUpAppearVolume: 0.1
+  powerUpAppearVolume: 0.2
   powerUpGained: {fileID: 8300000, guid: 82b1627a8e86b21468acfc9e53d8f458, type: 3}
   powerUpGainedVolume: 0.5
   powerUpDisappear: {fileID: 8300000, guid: 218d07e0243aabe47b81af939c9830e3, type: 3}
   powerUpDisppearVolume: 0.5
+  powerUpActivated: {fileID: 8300000, guid: d3f78a457c1fa2c43bc25df9e02e198b, type: 3}
+  powerUpActivatedVolume: 0.5
 --- !u!82 &7437976440853139552
 AudioSource:
   m_ObjectHideFlags: 0

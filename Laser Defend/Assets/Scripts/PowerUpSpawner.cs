@@ -9,10 +9,16 @@ namespace Assets.Scripts
 
         [SerializeField] List<GameObject> powerUps;
         [SerializeField] float timeBetweenPowerUps = 15f;
+        [SerializeField] int maxNumberOfPowerUps = 9;
 
         GameObject currentPowerUp = null;
 
-        #region Start
+        PowerUpManager powerUpManager;
+        #region Awake, Start
+        private void Awake()
+        {
+            powerUpManager = FindObjectOfType<PowerUpManager>();
+        }
         void Start()
         {
             StartCoroutine(SpawnPowerUps());
@@ -36,14 +42,16 @@ namespace Assets.Scripts
                 {
                     GameObject power = powerUps[powerUpIndex];
 
-                    currentPowerUp = Instantiate(power,  // what object to instantiate
+                    if ((power.CompareTag("Shield") && powerUpManager.GetShieldPowerUpCount() < maxNumberOfPowerUps)
+                        || (!power.CompareTag("Shield") && powerUpManager.GetMisslePowerUpCount() < maxNumberOfPowerUps))
+                    {
+                        currentPowerUp = Instantiate(power,  // what object to instantiate
                         power.transform.position, // where to spawn the object
                         Quaternion.identity); // need to specify rotation
+                    }
 
                     // switch to next power (works for only 2 powers)
                     powerUpIndex = (powerUpIndex == 0) ? 1 : 0;
-
-                    waitTime += power.GetComponent<PowerUp>().GetPowerUpDuration();
                 }
 
                 yield return new WaitForSeconds(waitTime);

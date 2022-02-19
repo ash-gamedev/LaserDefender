@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4150582505252057147}
   m_Layer: 9
   m_Name: PowerUp_Missle
-  m_TagString: Objects
+  m_TagString: Missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1544282459
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -551880580, guid: a279fd6f4b784f946abe0fb7d80dc430, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789ba79b0cbbef84e9e52f4139460637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 10
   powerUp: {fileID: 6863922687337505842, guid: 5b33aae443575004a85c291996e71dd3, type: 3}
 --- !u!61 &2607388651129113319
 BoxCollider2D:

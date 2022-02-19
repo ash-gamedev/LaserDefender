@@ -20,6 +20,7 @@ namespace Assets.Scripts
         
         // public fields
         [HideInInspector] public bool isFiring;
+        [HideInInspector] public Enum.Sounds playerShootingSound = Enum.Sounds.PlayerShot;
 
         // private fields
         private Coroutine firingCoroutine;
@@ -89,7 +90,7 @@ namespace Assets.Scripts
                     instanceRb.velocity = (useAI ? -transform.up : transform.up) * projectileSpeed;
 
                 // play sound
-                Enum.Sounds firingSound = useAI ? Enum.Sounds.EnemyShot : Enum.Sounds.PlayerShot;
+                Enum.Sounds firingSound = useAI ? Enum.Sounds.EnemyShot : playerShootingSound;
                 soundEffects.PlaySoundEffect(firingSound);
 
                 Destroy(instance, projectileLifetime);

@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUp_Shield Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2607388651129113316, guid: 69e98e2e6b0de42448f725d102d8cd55, type: 3}
+      propertyPath: m_TagString
+      value: Shield
+      objectReference: {fileID: 0}
     - target: {fileID: 2607388651129113318, guid: 69e98e2e6b0de42448f725d102d8cd55, type: 3}
       propertyPath: powerUp
       value: 
