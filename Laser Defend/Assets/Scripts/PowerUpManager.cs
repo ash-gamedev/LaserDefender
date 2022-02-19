@@ -76,7 +76,7 @@ namespace Assets.Scripts
         }
         void OnActivateShieldPowerUp(InputValue value)
         {
-            if (shieldPowerUpsCount > 0 && !isPowerUpActive)
+            if (shieldPowerUpsCount > 0 && !isPowerUpActive && !PauseMenu.GameIsPaused)
             {
                 shieldPowerUpsCount--;
                 UpdateUI();
@@ -86,7 +86,7 @@ namespace Assets.Scripts
 
         void OnActivateMisslePowerUp(InputValue value)
         {
-            if (misslePowerUpsCount > 0 && !isPowerUpActive)
+            if (misslePowerUpsCount > 0 && !isPowerUpActive && !PauseMenu.GameIsPaused)
             {
                 misslePowerUpsCount--;
                 UpdateUI();

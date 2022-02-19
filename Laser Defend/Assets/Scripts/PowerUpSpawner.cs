@@ -33,7 +33,7 @@ namespace Assets.Scripts
         IEnumerator SpawnPowerUps()
         {
             int powerUpIndex = 0;
-            yield return new WaitForSeconds(timeBetweenPowerUps);
+            yield return new WaitForSeconds(timeBetweenPowerUps/2);
             do
             {
                 float waitTime = timeBetweenPowerUps;

@@ -44,11 +44,12 @@ namespace Assets.Scripts
             {
                 foreach (WaveConfigSO wave in waveConfigs)
                 {
+                    yield return new WaitForSeconds(timeBetweenWaves * waveTimeVariance);
+
                     waveNumber++;
                     textWaveCount.text = (waveNumber > 9999 ? "W #" : "Wave #") + waveNumber.ToString();
                     currentWave = wave;
                     int numEnemies = currentWave.GetEnemyCount();
-
 
                     for (int i = 0; i < numEnemies; i++)
                     {
@@ -75,7 +76,6 @@ namespace Assets.Scripts
                         enemyType = enemyType == 0 ? 1 : 0;
                     }
 
-                    yield return new WaitForSeconds(timeBetweenWaves*waveTimeVariance);
                 }
                 // decrease the time each loop through of waves to increase difficulty
                 waveTimeVariance *= 0.8f;

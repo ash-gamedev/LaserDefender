@@ -54,7 +54,8 @@ namespace Assets.Scripts {
 
         void OnMove(InputValue value)
         {
-            rawInput = value.Get<Vector2>();
+            if(!PauseMenu.GameIsPaused)
+                rawInput = value.Get<Vector2>();
         }
 
         void Move()
@@ -72,7 +73,7 @@ namespace Assets.Scripts {
 
         void OnFire(InputValue value)
         {
-            if(shooter != null)
+            if(shooter != null && !PauseMenu.GameIsPaused)
             {
                 shooter.isFiring = value.isPressed;
             }

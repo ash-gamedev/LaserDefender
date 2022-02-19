@@ -9,12 +9,22 @@ namespace Assets.Scripts
         [SerializeField] float sceneLoadDelay = 2f;
         public void LoadMainMenu()
         {
+            // in case returning after pause
+            Time.timeScale = 1f;
+            FindObjectOfType<ScoreKeeper>()?.ResetScore();
+
             SceneManager.LoadScene("MainMenu");
         }
         public void LoadGame()
         {
             SceneManager.LoadScene("Game");
         }
+
+        public void LoadControls()
+        {
+            SceneManager.LoadScene("Controls");
+        }
+
         public void LoadGameOver()
         {
             StartCoroutine(WaitAndLoad("GameOver", sceneLoadDelay));

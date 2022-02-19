@@ -59,7 +59,7 @@ namespace Assets.Scripts
         /// </summary>
         void Fire()
         {
-            if (isFiring && firingCoroutine == null)
+            if (isFiring && firingCoroutine == null && !PauseMenu.GameIsPaused)
             {
                 firingCoroutine = StartCoroutine(FireContinuously());
             }
